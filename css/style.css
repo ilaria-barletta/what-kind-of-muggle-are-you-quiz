@@ -1,5 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Barrio&family=Dosis&display=swap');
 
+/* Common styles start */
+body {
+    font-family: 'Dosis', sans-serif;
+}
+
 h1 {
     font-family: 'Barrio', cursive;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+/* Common styles end */
+
+/* Header & Nav styles start */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav > ul {
+    list-style-type: none;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
+    display: flex;
+    gap: 5px;
+}
+/* Header & Nav styles end */
