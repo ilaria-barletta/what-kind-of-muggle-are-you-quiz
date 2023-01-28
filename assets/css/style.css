@@ -3,6 +3,7 @@
 /* Common styles start */
 body {
     font-family: 'Dosis', sans-serif;
+    background-image: url(../images/harry-potter-hogwarts-homepage-background.jpeg);
 }
 
 h1 {
@@ -30,3 +31,4 @@ nav > ul {
     gap: 5px;
 }
 /* Header & Nav styles end */
+
