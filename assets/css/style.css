@@ -35,3 +35,18 @@ nav .active {
 }
 /* Header & Nav styles end */
 
+/* Homepage style start */
+#homepage-intro {
+    text-align: center;
+}
+#homepage-form {
+    display: flex;
+    justify-content: center;
+}
+#homepage-button { 
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Homepage style end */
