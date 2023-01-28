@@ -30,5 +30,8 @@ nav > ul {
     display: flex;
     gap: 5px;
 }
+nav .active {
+    border-bottom: 1px solid black;
+}
 /* Header & Nav styles end */
 
