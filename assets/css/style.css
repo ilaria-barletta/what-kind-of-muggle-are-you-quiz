@@ -39,17 +39,20 @@ nav .active {
 #homepage-intro {
     text-align: center;
 }
-#homepage-form {
+
+/* Homepage style end */
+
+/* Wizard-form for homepage and quiz page*/
+#wizard-details-form{
     display: flex;
     justify-content: center;
 }
-#homepage-button { 
+#start-quiz-button { 
     display: block;
     width: 100%;
     margin-top: 15px;
 }
-
-/* Homepage style end */
+/* Wizard-form end */
 
 /* Feedback style start*/
 #feedback {
