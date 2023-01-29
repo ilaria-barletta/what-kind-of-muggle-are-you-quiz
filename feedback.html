@@ -25,7 +25,32 @@
         </nav>
     </header>
     <section>
-        <h1>Feedback</h1>
+        <h2 id="feedback-title">Feedback</h2>
+        <form id="feedback">
+            <!--name-->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+            <!--rating 1 to 5 -->
+            <div>
+                <label>How would you rate this quiz?</label>
+                <label for="rating1">1</label>
+                <input type="radio" name="rating" value="1" id="rating1">
+                <label for="rating2">2</label>
+                <input type="radio" name="rating" value="2" id="rating2">
+                <label for="rating3">3</label>
+                <input type="radio" name="rating" value="3" id="rating3">
+                <label for="rating4">4</label>
+                <input type="radio" name="rating" value="4" id="rating4">
+                <label for="rating5">5</label>
+                <input type="radio" name="rating" value="5" id="rating5">
+            </div>
+            <!--open feedback-->
+            <label for="feedback">Give us your feedback:</label>
+            <textarea id="feedback" name="feedback" placeholder="Let us know your opinion, how can we make it better?"></textarea>
+            <!--send button-->
+            <button id="send-button">Send!<i class="fa-solid fa-wand-sparkles"></i></button>
+        </form>
+        
     </section>
 
     <!-- Loading font awesome -->

@@ -50,3 +50,15 @@ nav .active {
 }
 
 /* Homepage style end */
+
+/* Feedback style start*/
+#feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+#feedback-title {
+    text-align: center;
+}
+/* Feedback style end*/
