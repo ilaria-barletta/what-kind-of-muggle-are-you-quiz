@@ -1,7 +1,35 @@
+const detailsFormSection = document.getElementById("wizard-details-form");
 const detailsForm = document.getElementById("details-form");
+const quizQuestionsSection = document.getElementById("quiz-questions");
+
+function makeQuizVisible() {
+    quizQuestionsSection.classList.remove("invisible");
+}
+
+function makeQuizInvisible() {
+    quizQuestionsSection.classList.add("invisible");
+}
+
+function makeDetailsFormVisible() {
+    detailsFormSection.classList.remove("invisible");
+}
+
+function makeDetailsFormInvisible() {
+    detailsFormSection.classList.add("invisible");
+}
+
+function goToQuiz(){
+    makeQuizVisible();
+    makeDetailsFormInvisible();
+}
+
+function goToDetailsForm(){
+    makeDetailsFormVisible();
+    makeQuizInvisible();
+}
 
 /**
- * This funcion stores users details when they submit the wizard-details form 
+ * This function stores users details when they submit the wizard-details form 
  */
 function detailsFormSubmit (event){
     event.preventDefault();
@@ -10,7 +38,19 @@ function detailsFormSubmit (event){
     const wizardEmail = detailsForm.elements['wemail'].value;
     localStorage.setItem('name', wizardName);
     localStorage.setItem('email', wizardEmail);
-    
+
+    goToQuiz();
 }
 
-detailsForm.addEventListener( 'submit', detailsFormSubmit); 
+detailsForm.addEventListener('submit', detailsFormSubmit); 
+
+
+/**
+ * When loading quiz page show quiz or form depending on if we already have users details or not
+ */
+const wizardName = localStorage.getItem('name');
+if (wizardName !== null) {
+    goToQuiz()
+} else {
+    goToDetailsForm()
+}

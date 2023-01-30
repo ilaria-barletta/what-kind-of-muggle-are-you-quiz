@@ -24,7 +24,9 @@
             </ul>
         </nav>
     </header>
-    <section id="wizard-details-form">
+
+    <!-- This section shows if we don't know the users name which we need to get before we start the quiz -->
+    <section id="wizard-details-form" class="invisible">
         <form id="details-form">
             <label for="wname">Wizard name:</label><br>
             <input type="text" id="wname" name="wname" placeholder="wizard name"><br>
@@ -32,6 +34,11 @@
             <input type="email" id="wemail" name="wemail" placeholder="wizard email">
             <button id="start-quiz-button">Go!<i class="fa-solid fa-wand-sparkles"></i></button>
         </form>
+    </section>
+
+    <!-- This is the main quiz section where the user answers the questions -->
+    <section id="quiz-questions" class="invisible">
+        Quiz questions
     </section>
 
     <!-- Loading font awesome -->
