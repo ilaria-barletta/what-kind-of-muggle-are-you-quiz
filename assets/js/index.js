@@ -1,7 +1,8 @@
 const detailsFormSection = document.getElementById("wizard-details-form");
 const detailsForm = document.getElementById("details-form");
 const quizQuestionsSection = document.getElementById("quiz-questions");
-const homepageIntroSection = document.getElementById("homepage-intro")
+const homepageIntroSection = document.getElementById("homepage-intro");
+const currentQuestionLabel = document.getElementById("current-question-label");
 
 function makeQuizVisible() {
     quizQuestionsSection.classList.remove("invisible");
@@ -23,10 +24,17 @@ function makeHomepageIntroInvisible() {
     homepageIntroSection.classList.add("invisible")
 }
 
-function goToQuiz(){
+function showQuizQuestion (questionNumber) {
+    const question = quizQuestions[questionNumber];
+    currentQuestionLabel.innerText = question.title;
+}
+
+function goToQuiz() {
     makeQuizVisible();
     makeDetailsFormInvisible();
     makeHomepageIntroInvisible();
+
+    showQuizQuestion(0);
 }
 
 function goToDetailsForm(){
@@ -52,7 +60,7 @@ detailsForm.addEventListener('submit', detailsFormSubmit);
 
 
 /**
- * When loading quiz page show quiz or form depending on if we already have users details or not
+ * Show quiz or form depending on if we already have users details or not
  */
 const wizardName = localStorage.getItem('name');
 if (wizardName !== null) {
