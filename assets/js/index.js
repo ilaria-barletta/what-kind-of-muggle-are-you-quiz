@@ -1,8 +1,11 @@
 const detailsFormSection = document.getElementById("wizard-details-form");
 const detailsForm = document.getElementById("details-form");
+const quizQuestionsForm = document.getElementById("quiz-questions-form");
 const quizQuestionsSection = document.getElementById("quiz-questions");
 const homepageIntroSection = document.getElementById("homepage-intro");
 const currentQuestionLabel = document.getElementById("current-question-label");
+
+let currentQuizQuestion = 0;
 
 function makeQuizVisible() {
     quizQuestionsSection.classList.remove("invisible");
@@ -57,6 +60,17 @@ function detailsFormSubmit (event){
 }
 
 detailsForm.addEventListener('submit', detailsFormSubmit); 
+
+/**
+ * This function updates the question shown when user clicks on next
+ */
+function quizQuestionsFormSubmit (event){ 
+    event.preventDefault();
+    currentQuizQuestion++; 
+    showQuizQuestion(currentQuizQuestion) 
+}
+
+quizQuestionsForm.addEventListener('submit', quizQuestionsFormSubmit); 
 
 
 /**
