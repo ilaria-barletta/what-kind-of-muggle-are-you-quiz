@@ -1,6 +1,7 @@
 const detailsFormSection = document.getElementById("wizard-details-form");
 const detailsForm = document.getElementById("details-form");
 const quizQuestionsSection = document.getElementById("quiz-questions");
+const homepageIntroSection = document.getElementById("homepage-intro")
 
 function makeQuizVisible() {
     quizQuestionsSection.classList.remove("invisible");
@@ -18,9 +19,14 @@ function makeDetailsFormInvisible() {
     detailsFormSection.classList.add("invisible");
 }
 
+function makeHomepageIntroInvisible() {
+    homepageIntroSection.classList.add("invisible")
+}
+
 function goToQuiz(){
     makeQuizVisible();
     makeDetailsFormInvisible();
+    makeHomepageIntroInvisible();
 }
 
 function goToDetailsForm(){
