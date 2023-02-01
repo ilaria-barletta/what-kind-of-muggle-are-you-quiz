@@ -16,7 +16,8 @@ a {
 }
 
 .invisible {
-    visibility: hidden;
+    /* this is so that the invisible class overrides everything else */
+    display: none !important;
 }
 /* Common styles end */
 
