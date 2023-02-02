@@ -30,6 +30,12 @@ function makeHomepageIntroInvisible() {
 function showQuizQuestion (questionNumber) {
     const question = quizQuestions[questionNumber];
     currentQuestionLabel.innerText = question.title;
+
+    // Set the option labels for each question option
+    for(let i = 0; i < question.options.length; i++) {
+        const optionOneLabel = document.getElementById("option"+(i+1)+"label");
+        optionOneLabel.innerText = question.options[i].title;
+    }
 }
 
 function goToQuiz() {
