@@ -6,6 +6,7 @@ const homepageIntroSection = document.getElementById("homepage-intro");
 const currentQuestionLabel = document.getElementById("current-question-label");
 
 let currentQuizQuestion = 0;
+let userScore = 0;
 
 function makeQuizVisible() {
     quizQuestionsSection.classList.remove("invisible");
@@ -72,6 +73,20 @@ detailsForm.addEventListener('submit', detailsFormSubmit);
  */
 function quizQuestionsFormSubmit (event){ 
     event.preventDefault();
+
+    // Update the score
+    const question = quizQuestions[currentQuizQuestion];
+    const selectedOptionRadio = document.querySelector('input[name="answer"]:checked');
+    const selectedValue = selectedOptionRadio.value; 
+    const chosenOption = question.options[selectedValue];
+    const optionScore = chosenOption.value;
+
+    userScore = userScore + optionScore;
+    
+    console.log(' score: ', userScore);
+    
+
+    // Go to the next question
     currentQuizQuestion++; 
     showQuizQuestion(currentQuizQuestion) 
 }

@@ -3,19 +3,24 @@ const quizQuestions = [
         title: "Where did all begin?",
         options: [
             {
-                title: "12 Grimmauld Place"
+                title: "12 Grimmauld Place",
+                value: 0,
             }, 
             {
-                title: "All, what? I didn't understand the question"
+                title: "All, what? I didn't understand the question",
+                value: -10,
             }, 
             {
-                title: "Godric's Hollow, west country, England"
+                title: "Godric's Hollow, west country, England",
+                value: 10,
             }, 
             {
-                title: "Hogsmeade's high street"    
+                title: "Hogsmeade's high street",
+                value: 0,
             },
             {
-                title: "4 Private Drive"
+                title: "4 Private Drive",
+                value: 5,
             }
         ]
     },
