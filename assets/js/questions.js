@@ -19,7 +19,7 @@ const quizQuestions = [
                 value: 0,
             },
             {
-                title: "4 Private Drive",
+                title: "4 Privet Drive",
                 value: 5,
             }
         ]
@@ -28,19 +28,24 @@ const quizQuestions = [
         title: "How would you prefer to go places?",
         options: [
             {
-                title: "Using a Broomstick"
+                title: "Using a Broomstick",
+                value: 10,
             }, 
             {
-                title: "Using a portkey"
+                title: "Using a portkey",
+                value: 10,
             }, 
             {
-                title: "pixie dust"
+                title: "pixie dust",
+                value: 10,
             }, 
             {
-                title: "oopsie daisy"    
+                title: "oopsie daisy",
+                value: -10,    
             },
             {
-                title: "knight bus"
+                title: "knight bus",
+                value: 10,
             }
         ]
     },
@@ -48,19 +53,24 @@ const quizQuestions = [
         title: "What's the best broom ever made",
         options: [
             {
-                title: "dyson cyclon v 10"
+                title: "dyson cyclon v 10",
+                value: -10,
             }, 
             {
-                title: "Firebolt"
+                title: "Firebolt",
+                value: 10,
             }, 
             {
-                title: "Nimbus 2000"
+                title: "Nimbus 2000",
+                value: 5,
             }, 
             {
-                title: "Nimbus 1000"    
+                title: "Nimbus 1000",
+                value: 0,    
             },
             {
-                title: "Roomba i7"
+                title: "Roomba i7",
+                value: -10,
             }
         ]
     },
@@ -68,19 +78,24 @@ const quizQuestions = [
         title: "How would you make someone do what you want?",
         options: [
             {
-                title: "Expelliarmus"
+                title: "Expelliarmus",
+                value: 0,
             }, 
             {
-                title: "Please"
+                title: "Please",
+                value: -5,
             }, 
             {
-                title: "Please, I beg you"
+                title: "Please, I beg you",
+                value: -10,
             }, 
             {
-                title: "Imperio"    
+                title: "Imperio",
+                value: 10,    
             },
             {
-                title: "Stupefy"
+                title: "Stupefy",
+                value: 0,
             }
         ]
     },
@@ -88,19 +103,24 @@ const quizQuestions = [
         title: "Who has proven to be the worst pet animal ever?",
         options: [
             {
-                title: "Nagini the snake"
+                title: "Nagini the snake",
+                value: 0,
             }, 
             {
-                title: "Trevor the toad"
+                title: "Trevor the toad",
+                value: 0,
             }, 
             {
-                title: "Crookshanks the cat"
+                title: "Crookshanks the cat",
+                value: 0,
             }, 
             {
-                title: "Scrabbers the rat"    
+                title: "Scrabbers the rat",
+                value: 10,    
             },
             {
-                title: "Scooby the dog"
+                title: "Scooby the dog",
+                value: -10,
             }
         ]
     },
@@ -108,19 +128,24 @@ const quizQuestions = [
         title: "Which one, in the list, is not a deathly hallow?",
         options: [
             {
-                title: "The invisible cloack"
+                title: "The invisible cloack",
+                value: -10,
             }, 
             {
-                title: "Petrifying pain"
+                title: "Petrifying pain",
+                value: 10,
             }, 
             {
-                title: "The elden wand"
+                title: "The elden wand",
+                value: -10,
             }, 
             {
-                title: "The philosopher stone"    
+                title: "The philosopher stone",
+                value: 10,    
             },
             {
-                title: "the resurrection stone"
+                title: "the resurrection stone",
+                value: -10,
             }
         ]
     },
@@ -128,19 +153,24 @@ const quizQuestions = [
         title: "Who is the most hated teacher amongst wizards and muggles?",
         options: [
             {
-                title: "Severus Snape"
+                title: "Severus Snape",
+                value: 5,
             }, 
             {
-                title: "Dolores Umbridge"
+                title: "Dolores Umbridge",
+                value: 10,
             }, 
             {
-                title: "Lockhart"
+                title: "Lockhart",
+                value: 0,
             }, 
             {
-                title: "Pomona Sprout"    
+                title: "Pomona Sprout",
+                value: 0,    
             },
             {
-                title: "Dudley"
+                title: "Dudley",
+                value: -10,
             }
         ]
     },
@@ -148,19 +178,24 @@ const quizQuestions = [
         title: "Which one, here, is not a Weasley?",
         options: [
             {
-                title: "Ginny"
+                title: "Ginny",
+                value: -10,
             }, 
             {
-                title: "Rolf"
+                title: "Rolf",
+                value: 10,
             }, 
             {
-                title: "Percy"
+                title: "Percy",
+                value: -10,
             }, 
             {
-                title: "Bill"    
+                title: "Bill",
+                value: -10,    
             },
             {
-                title: "John"
+                title: "John",
+                value: 10,
             }
         ]
     },
@@ -168,19 +203,24 @@ const quizQuestions = [
         title: "What is Harry's Patronus ?",
         options: [
             {
-                title: "A stag"
+                title: "A stag",
+                value: 10,
             }, 
             {
-                title: "A doe"
+                title: "A doe",
+                value: 5,
             }, 
             {
-                title: "A dementor"
+                title: "A dementor",
+                value: -10,
             }, 
             {
-                title: "A silver fox"    
+                title: "A silver fox",
+                value: -10,   
             },
             {
-                title: "A full moon"
+                title: "A full moon",
+                value: -10,
             }
         ]
     },
@@ -188,19 +228,24 @@ const quizQuestions = [
         title: "If you were born of the same blood status as You-Know-Who, what would you be?",
         options: [
             {
-                title: "AB+"
+                title: "AB+",
+                value: -10,
             }, 
             {
-                title: "Pure blood"
+                title: "Pure blood",
+                value: -10,
             }, 
             {
-                title: "Half blood"
+                title: "Half blood",
+                value: 10,
             }, 
             {
-                title: "Muggle born"    
+                title: "Muggle born",
+                value: 5,    
             },
             {
-                title: "Muggle"
+                title: "Muggle",
+                value: -10,
             }
         ]
     },   
@@ -208,19 +253,24 @@ const quizQuestions = [
         title: "Who did not take part in the Triwizard Tournament?",
         options: [
             {
-                title: "Harry"
+                title: "Harry",
+                value: -10,
             }, 
             {
-                title: "Fred"
+                title: "Fred",
+                value: 10,
             }, 
             {
-                title: "Victor"
+                title: "Victor",
+                value: -10,
             }, 
             {
-                title: "Fleur"    
+                title: "Fleur",
+                value: -10,    
             },
             {
-                title: "Cedric"
+                title: "Cedric",
+                value: -10,
             }
         ]
     },   
@@ -228,19 +278,24 @@ const quizQuestions = [
         title: "What is Harry's dream job?",
         options: [
             {
-                title: "Hogwarts teacher"
+                title: "Hogwarts teacher",
+                value: 0,
             }, 
             {
-                title: "Minister of magic"
+                title: "Minister of magic",
+                value: 0,
             }, 
             {
-                title: "Auror"
+                title: "Auror",
+                value: 10,
             }, 
             {
-                title: "Hogwarts headmaster"    
+                title: "Hogwarts headmaster",
+                value: 0,    
             },
             {
-                title: "Goblin"
+                title: "Goblin",
+                value: -10,
             }
         ]
     },   
@@ -248,19 +303,24 @@ const quizQuestions = [
         title: "What's the main ingredient in Harry's wand?",
         options: [
             {
-                title: "A phoenix feather"
+                title: "A phoenix feather",
+                value: 10,
             }, 
             {
-                title: "Unicorn hair"
+                title: "Unicorn hair",
+                value: 0,
             }, 
             {
-                title: "Dragon heartstring"
+                title: "Dragon heartstring",
+                value: 0,
             }, 
             {
-                title: "A drop of You-Know-Who blood"    
+                title: "A drop of You-Know-Who blood",
+                value: -10,    
             },
             {
-                title: "Basilisk scale"
+                title: "Basilisk scale",
+                value: -10,
             }
         ]
     },   
@@ -268,19 +328,24 @@ const quizQuestions = [
         title: "Which one, here, is not a ball used in quidditch?",
         options: [
             {
-                title: "Snitch"
+                title: "Snitch",
+                value: -10,
             }, 
             {
-                title: "Bludger"
+                title: "Bludger",
+                value: -10,
             }, 
             {
-                title: "Yule"
+                title: "Yule",
+                value: 10,
             }, 
             {
-                title: "Oval"    
+                title: "Oval",
+                value: 10,    
             },
             {
-                title: "Quaffle"
+                title: "Quaffle",
+                value: -10,
             }
         ]
     },   
@@ -288,19 +353,24 @@ const quizQuestions = [
         title: "What's the name of Hagrid's dog?",
         options: [
             {
-                title: "Fang"
+                title: "Fang",
+                value: 10,
             }, 
             {
-                title: "Buckbeak"
+                title: "Buckbeak",
+                value: 0,
             }, 
             {
-                title: "Fluffy"
+                title: "Fluffy",
+                value: 5,
             }, 
             {
-                title: "Aragog"    
+                title: "Aragog",
+                value: 0,    
             },
             {
-                title: "Norbert"
+                title: "Norbert",
+                value: 0,
             }
         ]
     },   
@@ -308,39 +378,49 @@ const quizQuestions = [
         title: "What did Dobby get from Harry that set him free from Lucius Malfoy?",
         options: [
             {
-                title: "The oak wand"
+                title: "The oak wand",
+                value: -10,
             }, 
             {
-                title: "A glove"
+                title: "A glove",
+                value: 0,
             }, 
             {
-                title: "A sock"
+                title: "A sock",
+                value: 10,
             }, 
             {
-                title: "A scarf"    
+                title: "A scarf",
+                value: 0,    
             },
             {
-                title: "A pebble"
+                title: "A pebble",
+                value: -10,
             }
         ]
     },   
     {
-        title: "If you were born of the same blood status as You-Know-Who, what would you be?",
+        title: "If you were born of the same blood status as Hermione, what would you be?",
         options: [
             {
-                title: "AB+"
+                title: "AB+",
+                value: -10,
             }, 
             {
-                title: "Pure blood"
+                title: "Pure blood",
+                value: 0,
             }, 
             {
-                title: "Half blood"
+                title: "Half blood",
+                value: 0,
             }, 
             {
-                title: "Muggle born"    
+                title: "Muggle born",
+                value: 10,    
             },
             {
-                title: "Muggle"
+                title: "Muggle",
+                value: -10,
             }
         ]
     },   
@@ -348,39 +428,49 @@ const quizQuestions = [
         title: "Who is Harry's godfather?",
         options: [
             {
-                title: "Sirius Black"
+                title: "Padfoot",
+                value: 10,
             }, 
             {
-                title: "Remus Lupin"
+                title: "Moony",
+                value: 0,
             }, 
             {
-                title: "Peter Pettigrew"
+                title: "Wormtail",
+                value: -10,
             }, 
             {
-                title: "Albus Dumbledore"    
+                title: "Dumbledore",
+                value: 0,    
             },
             {
-                title: "Severus Snape"
+                title: "Snape",
+                value: 0,
             }
         ]
     },   
     {
-        title: "What's the name of the powerful potion that can change your appearance into that of someone else",
+        title: "What's the potion that can change your appearance into that of someone else",
         options: [
             {
-                title: "Felix felicis"
+                title: "Felix felicis",
+                value: -10,
             }, 
             {
-                title: "Fungiface Potion"
+                title: "Fungiface Potion",
+                value: 0,
             }, 
             {
-                title: "Malevolent mixture"
+                title: "Malevolent mixture",
+                value: -10,
             }, 
             {
-                title: "Polijuice potion"    
+                title: "Polijuice potion",
+                value: 10,    
             },
             {
-                title: "Skele-Gro"
+                title: "Skele-Gro",
+                value: -10,
             }
         ]
     },   
@@ -388,19 +478,24 @@ const quizQuestions = [
         title: "Finish the quote: 'After all this time?'",
         options: [
             {
-                title: "Yes"
+                title: "Yes",
+                value: 0,
             }, 
             {
-                title: "Always"
+                title: "Always",
+                value: 10,
             }, 
             {
-                title: "Sometimes"
+                title: "Sometimes",
+                value: 0,
             }, 
             {
-                title: "I'm afraid so"    
+                title: "I'm afraid so",
+                value: -10,    
             },
             {
-                title: "Whatever"
+                title: "Whatever",
+                value: -10,
             }
         ]
     },   
