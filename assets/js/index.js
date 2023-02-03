@@ -3,6 +3,7 @@ const detailsForm = document.getElementById("details-form");
 const quizQuestionsForm = document.getElementById("quiz-questions-form");
 const quizQuestionsSection = document.getElementById("quiz-questions");
 const homepageIntroSection = document.getElementById("homepage-intro");
+const championsSection = document.getElementById("champions-section");
 const currentQuestionLabel = document.getElementById("current-question-label");
 
 let currentQuizQuestion = 0;
@@ -28,6 +29,14 @@ function makeHomepageIntroInvisible() {
     homepageIntroSection.classList.add("invisible")
 }
 
+function makeChampionsSectionVisible() {
+    championsSection.classList.remove("invisible");
+}
+
+function makeChampionsSectionInvisible() {
+    championsSection.classList.add("invisible");
+}
+
 function showQuizQuestion (questionNumber) {
     const question = quizQuestions[questionNumber];
     currentQuestionLabel.innerText = question.title;
@@ -50,6 +59,11 @@ function goToQuiz() {
 function goToDetailsForm(){
     makeDetailsFormVisible();
     makeQuizInvisible();
+}
+
+function endQuiz() {
+    makeQuizInvisible();
+    makeChampionsSectionVisible();
 }
 
 /**
@@ -87,11 +101,17 @@ function quizQuestionsFormSubmit (event){
 
     // Reset the selected option
     selectedOptionRadio.checked = false;
-    
 
-    // Go to the next question
-    currentQuizQuestion++; 
-    showQuizQuestion(currentQuizQuestion) 
+
+    // If we are on the last question finish the quiz
+    if (currentQuizQuestion === quizQuestions.length - 1) {
+        // Finish the quiz
+        endQuiz();
+    } else {
+        // Go to the next question
+        currentQuizQuestion++; 
+        showQuizQuestion(currentQuizQuestion) 
+    }
 }
 
 quizQuestionsForm.addEventListener('submit', quizQuestionsFormSubmit); 
