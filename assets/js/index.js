@@ -7,6 +7,7 @@ const championsSection = document.getElementById("champions-section");
 const currentQuestionLabel = document.getElementById("current-question-label");
 const instructionButton = document.getElementById("instruction-button");
 const rulesSection = document.getElementById("rules-section");
+const backToQuizButton = document.getElementById("back-to-quiz-button")
 
 let currentQuizQuestion = 0;
 let userScore = 0;
@@ -92,9 +93,18 @@ function endQuiz() {
 function instructionButtonClick() {
     makeQuizInvisible();
     makeRulesSectionVisible();
+    makeInstructionButtonInvisible();
 }
 
 instructionButton.addEventListener('click', instructionButtonClick)
+
+function backToQuizButtonClick() {
+    makeQuizVisible();
+    makeRulesSectionInvisible();
+    makeInstructionButtonVisible();
+}
+
+backToQuizButton.addEventListener('click',backToQuizButtonClick)
 
 /**
  * This function stores users details when they submit the wizard-details form 
