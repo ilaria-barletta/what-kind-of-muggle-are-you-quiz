@@ -6,6 +6,7 @@ const homepageIntroSection = document.getElementById("homepage-intro");
 const championsSection = document.getElementById("champions-section");
 const currentQuestionLabel = document.getElementById("current-question-label");
 const instructionButton = document.getElementById("instruction-button");
+const rulesSection = document.getElementById("rules-section");
 
 let currentQuizQuestion = 0;
 let userScore = 0;
@@ -38,6 +39,22 @@ function makeChampionsSectionInvisible() {
     championsSection.classList.add("invisible");
 }
 
+function makeInstructionButtonVisible() {
+    instructionButton.classList.remove("invisible");
+}
+
+function makeInstructionButtonInvisible() {
+    instructionButton.classList.add("invisible");
+}
+
+function makeRulesSectionVisible() {
+    rulesSection.classList.remove("invisible");
+}
+
+function makeRulesSectionInvisible() {
+    rulesSection.classList.add("invisible");
+}
+
 function showQuizQuestion (questionNumber) {
     const question = quizQuestions[questionNumber];
     currentQuestionLabel.innerText = question.title;
@@ -53,6 +70,8 @@ function goToQuiz() {
     makeQuizVisible();
     makeDetailsFormInvisible();
     makeHomepageIntroInvisible();
+    makeInstructionButtonVisible();
+    makeRulesSectionInvisible();
 
     showQuizQuestion(0);
 }
@@ -60,15 +79,19 @@ function goToQuiz() {
 function goToDetailsForm(){
     makeDetailsFormVisible();
     makeQuizInvisible();
+    makeRulesSectionInvisible();
+    makeInstructionButtonInvisible();
 }
 
 function endQuiz() {
     makeQuizInvisible();
     makeChampionsSectionVisible();
+    makeInstructionButtonInvisible();
 }
 
 function instructionButtonClick() {
-    console.log(' === clicked ====')
+    makeQuizInvisible();
+    makeRulesSectionVisible();
 }
 
 instructionButton.addEventListener('click', instructionButtonClick)
