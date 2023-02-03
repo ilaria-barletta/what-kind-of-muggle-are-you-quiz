@@ -84,6 +84,9 @@ function quizQuestionsFormSubmit (event){
     userScore = userScore + optionScore;
     
     console.log(' score: ', userScore);
+
+    // Reset the selected option
+    selectedOptionRadio.checked = false;
     
 
     // Go to the next question
