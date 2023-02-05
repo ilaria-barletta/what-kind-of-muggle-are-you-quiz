@@ -10,10 +10,11 @@ body {
 h1 {
     font-family: 'Barrio', cursive;
 }
-
-a {
-    text-decoration: none;
-    color: black;
+h2 {
+    font-size:30px;
+}
+h3 {
+    font-size:25px
 }
 
 .invisible {
@@ -23,20 +24,11 @@ a {
 
 /* Header & Nav styles start */
 header {
+    font-family: 'Barrio', cursive;
+    font-size: 40px;
+    text-align: center;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-nav > ul {
-    list-style-type: none;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0;
-    display: flex;
-    gap: 5px;
-}
-nav .active {
-    border-bottom: 1px solid black;
+    flex-direction: column;
 }
 
 /* Homepage style start */
@@ -63,7 +55,7 @@ nav .active {
 }
 
 
-/* Wizard-form for homepage and quiz page*/
+/* Wizard-form for homepage*/
 #wizard-details-form{
     display: flex;
     justify-content: center;
@@ -72,4 +64,28 @@ nav .active {
     display: block;
     width: 100%;
     margin-top: 15px;
+    padding: 4px;
+    font-size: 1rem;
+}
+
+#details-form {
+    background-color: #e9e9e9;
+    min-width: 400px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#details-form label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1.25rem;
+}
+
+#details-form input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid black;
+    margin-bottom: 4px;
+    width: 100%;
+    width: calc(100% - 16px);
 }
