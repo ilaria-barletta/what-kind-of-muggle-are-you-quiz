@@ -38,6 +38,9 @@ header {
 
 
 /*Quiz style start */
+#quiz-questions {
+    background-color: rgb(237 237 237 / 70%);
+}
 #quiz-questions-form {
     display: flex;
     flex-direction: column;
@@ -60,6 +63,18 @@ header {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    font-size: 1.25rem;
+}
+
+/* Rules section */
+#rules-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(237 237 237 / 70%);
+}
+
+#rules-section p {
     font-size: 1.25rem;
 }
 
