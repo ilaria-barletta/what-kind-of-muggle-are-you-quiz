@@ -113,3 +113,9 @@ header {
     width: 100%;
     width: calc(100% - 16px);
 }
+
+/* this is the score section */
+#user-score-section {
+    background-color: rgb(237 237 237 / 70%);
+    text-align: center;
+}
