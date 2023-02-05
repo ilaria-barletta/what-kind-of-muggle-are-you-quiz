@@ -41,17 +41,26 @@ header {
 #quiz-questions-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 20px;
-    padding: 20px;
-    gap: 5px;
+    align-items: center;
+    gap: 10px;
 }
 #current-question-label {
-    font-size: 20px;
+    font-size: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 20px;
+}
+#question-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.question {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 1.25rem;
 }
 
 

@@ -39,22 +39,33 @@
     <section id="quiz-questions" class="invisible">
         <form id="quiz-questions-form">
             <label id="current-question-label">question</label>
-            <label id="option1label" for="option1">1</label>
-            <input type="radio" name="answer" value="0" id="option1">
-            <label id="option2label" for="option2">2</label>
-            <input type="radio" name="answer" value="1" id="option2">
-            <label id="option3label" for="option3">3</label>
-            <input type="radio" name="answer" value="2" id="option3">
-            <label id="option4label" for="option4">4</label>
-            <input type="radio" name="answer" value="3" id="option4">
-            <label id="option5label" for="option5">5</label>
-            <input type="radio" name="answer" value="4" id="option5">
-            <button id="question-button">Next</button>
+            <div id="question-container">
+                <div class="question">
+                    <label id="option1label" for="option1">1</label>
+                    <input type="radio" name="answer" value="0" id="option1">
+                </div>
+                <div class="question">
+                    <label id="option2label" for="option2">2</label>
+                    <input type="radio" name="answer" value="1" id="option2">
+                </div>
+                <div class="question">
+                    <label id="option3label" for="option3">3</label>
+                    <input type="radio" name="answer" value="2" id="option3">
+                </div>
+                <div class="question">
+                    <label id="option4label" for="option4">4</label>
+                    <input type="radio" name="answer" value="3" id="option4">
+                </div>
+                <div class="question">
+                    <label id="option5label" for="option5">5</label>
+                    <input type="radio" name="answer" value="4" id="option5">
+                </div>
+                <button id="question-button">Next</button>
+                <!-- This is a button that shows the instruction to the game when clicked-->
+                <button id="instruction-button">?</button>
+            </div>
         </form>
     </section>
-
-    <!-- This is a button that shows the instruction to the game when clicked-->
-    <button id="instruction-button">?</button>
 
     <!-- This is the rules section -->
     <section id="rules-section">
