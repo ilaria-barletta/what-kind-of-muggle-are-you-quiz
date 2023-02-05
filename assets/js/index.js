@@ -3,11 +3,17 @@ const detailsForm = document.getElementById("details-form");
 const quizQuestionsForm = document.getElementById("quiz-questions-form");
 const quizQuestionsSection = document.getElementById("quiz-questions");
 const homepageIntroSection = document.getElementById("homepage-intro");
-const championsSection = document.getElementById("champions-section");
+const userScoreSection = document.getElementById("user-score-section");
+const negativeScoreFeedback = document.getElementById("negative-number-score");
+const upToFiftyScoreFeedback = document.getElementById("up-to50-score");
+const fromFiftyOneScoreFeedback = document.getElementById("from51-score");
+const userScoreHeading = document.getElementById("user-score-heading");
 const currentQuestionLabel = document.getElementById("current-question-label");
 const instructionButton = document.getElementById("instruction-button");
 const rulesSection = document.getElementById("rules-section");
-const backToQuizButton = document.getElementById("back-to-quiz-button")
+const backToQuizButton = document.getElementById("back-to-quiz-button");
+
+const wizardName = localStorage.getItem('name');
 
 let currentQuizQuestion = 0;
 let userScore = 0;
@@ -32,12 +38,12 @@ function makeHomepageIntroInvisible() {
     homepageIntroSection.classList.add("invisible")
 }
 
-function makeChampionsSectionVisible() {
-    championsSection.classList.remove("invisible");
+function makeUserScoreSectionVisible() {
+    userScoreSection.classList.remove("invisible");
 }
 
-function makeChampionsSectionInvisible() {
-    championsSection.classList.add("invisible");
+function makeUserScoreSectionInvisible() {
+    userScoreSection.classList.add("invisible");
 }
 
 function makeInstructionButtonVisible() {
@@ -86,8 +92,29 @@ function goToDetailsForm(){
 
 function endQuiz() {
     makeQuizInvisible();
-    makeChampionsSectionVisible();
+    makeUserScoreSectionVisible();
+    showUserScoreResults();
     makeInstructionButtonInvisible();
+}
+
+function showUserScoreResults() {
+    // Show the score in the heading 
+    userScoreHeading.innerHTML = "You have finished the quiz, " + wizardName + ". Your score is: " + userScore;
+
+    // Show the correct user score feedback section
+    if (userScore < 0) {
+        negativeScoreFeedback.classList.remove("invisible");
+        upToFiftyScoreFeedback.classList.add("invisible");
+        fromFiftyOneScoreFeedback.classList.add("invisible");
+    } else if (userScore < 51) {
+        upToFiftyScoreFeedback.classList.remove("invisible");
+        negativeScoreFeedback.classList.add("invisible");
+        fromFiftyOneScoreFeedback.classList.add("invisible");
+    } else {
+        fromFiftyOneScoreFeedback.classList.remove("invisible");
+        negativeScoreFeedback.classList.add("invisible");
+        upToFiftyScoreFeedback.classList.add("invisible");
+    }
 }
 
 function instructionButtonClick() {
@@ -160,7 +187,6 @@ quizQuestionsForm.addEventListener('submit', quizQuestionsFormSubmit);
 /**
  * Show quiz or form depending on if we already have users details or not
  */
-const wizardName = localStorage.getItem('name');
 if (wizardName !== null) {
     goToQuiz()
 } else {
