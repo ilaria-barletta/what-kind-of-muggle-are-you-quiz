@@ -13,7 +13,7 @@ const instructionButton = document.getElementById("instruction-button");
 const rulesSection = document.getElementById("rules-section");
 const backToQuizButton = document.getElementById("back-to-quiz-button");
 
-const wizardName = localStorage.getItem('name');
+let wizardName = localStorage.getItem('name');
 
 let currentQuizQuestion = 0;
 let userScore = 0;
@@ -139,10 +139,13 @@ backToQuizButton.addEventListener('click',backToQuizButtonClick)
 function detailsFormSubmit (event){
     event.preventDefault();
 
-    const wizardName = detailsForm.elements['wname'].value;
+    const name = detailsForm.elements['wname'].value;
     const wizardEmail = detailsForm.elements['wemail'].value;
-    localStorage.setItem('name', wizardName);
+    localStorage.setItem('name', name);
     localStorage.setItem('email', wizardEmail);
+
+    // This is to store the wizardname to show on the score page
+    wizardName = name;
 
     goToQuiz();
 }
