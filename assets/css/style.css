@@ -40,6 +40,7 @@ header {
 /*Quiz style start */
 #quiz-questions {
     background-color: rgb(255 248 252 / 60%);
+    margin:30px;
 }
 #quiz-questions-form {
     display: flex;
@@ -72,6 +73,7 @@ header {
     flex-direction: column;
     align-items: center;
     background-color: rgb(255 248 252 / 60%);
+    margin:30px;
 }
 
 #rules-section p {
@@ -118,4 +120,103 @@ header {
 #user-score-section {
     background-color: rgb(255 248 252 / 60%);
     text-align: center;
+    margin:30px;
+}
+
+/*media queries*/
+@media screen and (max-width: 1300px) {
+    /*homepage*/
+    body {
+        background-size: initial;
+    }
+    header {
+        font-size: 35px;
+    }
+    #homepage-intro {
+        margin: 50px;
+    }
+    /*quiz-rules-score*/
+    #quiz-questions {
+        padding: 10px; 
+        margin: 250px;
+    }
+    #rules-section {
+        margin: 200px;
+        padding: 30px;
+    }
+    #user-score-section {
+        margin: 300px;
+        padding: 50px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    /*homepage*/
+    header {
+        font-size: 30px;
+    }
+    #homepage-intro {
+        margin: 30px;
+    }
+    /*quiz-rules-score*/
+    #quiz-questions {
+        padding: 20px;
+        margin: 150px;
+    }
+    #rules-section {
+        margin: 150px;
+        padding: 30px;
+    }
+    #user-score-section {
+        margin: 150px;
+        padding: 30px;
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
+    /*homepage*/
+    header {
+        font-size:25px;
+    }
+    /*quiz-rules-score*/
+    #quiz-questions {
+        padding: 20px;
+        margin:10px;
+    }
+    #rules-section {
+        margin: 80px;
+        padding: 20px;
+    }
+    #user-score-section {
+        margin: 100px;
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    /*homepage*/
+    header {
+        font-size: 20px;
+    }
+    #homepage-intro {
+        margin: 30px;
+    }
+    #details-form {
+        min-width: 200px;
+    }
+    /*quiz-rules-score*/
+    #quiz-questions {
+        padding: 10px;
+        margin: 15px;
+    }
+    #rules-section {
+        margin: 30px;
+        padding:10px;
+    }
+    #user-score-section {
+        margin: 20px;
+        padding: 20px;
+    }
+
 }
