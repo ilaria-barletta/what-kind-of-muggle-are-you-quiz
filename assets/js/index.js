@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 const detailsFormSection = document.getElementById("wizard-details-form");
 const detailsForm = document.getElementById("details-form");
 const quizQuestionsForm = document.getElementById("quiz-questions-form");
@@ -39,7 +41,7 @@ function makeDetailsFormInvisible() {
 }
 
 function makeHomepageIntroInvisible() {
-    homepageIntroSection.classList.add("invisible")
+    homepageIntroSection.classList.add("invisible");
 }
 
 function makeUserScoreSectionVisible() {
@@ -85,7 +87,7 @@ function makeChosenQuizQuestions() {
      * It gets a random question and chooses it if we didnt choose it before
      */
     while (chosenQuizQuestions.length < numberOfQuestions) {
-        let randomQuestion = quizQuestions[Math.floor(Math.random() * quizQuestions.length) + 1]
+        let randomQuestion = quizQuestions[Math.floor(Math.random() * quizQuestions.length) + 1];
         if (chosenQuizQuestions.indexOf(randomQuestion) === -1) {
             chosenQuizQuestions.push(randomQuestion);
         }
@@ -178,8 +180,8 @@ startQuizOverButton.addEventListener('click', startQuizOverButtonClick);
 function detailsFormSubmit (event){
     event.preventDefault();
 
-    const name = detailsForm.elements['wname'].value;
-    const wizardEmail = detailsForm.elements['wemail'].value;
+    const name = detailsForm.elements.wname.value;
+    const wizardEmail = detailsForm.elements.wemail.value;
     localStorage.setItem('name', name);
     localStorage.setItem('email', wizardEmail);
 
@@ -217,7 +219,7 @@ function quizQuestionsFormSubmit (event){
     } else {
         // Go to the next question
         currentQuizQuestion++; 
-        showQuizQuestion(currentQuizQuestion) 
+        showQuizQuestion(currentQuizQuestion);
     }
 }
 
@@ -227,7 +229,7 @@ quizQuestionsForm.addEventListener('submit', quizQuestionsFormSubmit);
  * Show quiz or form depending on if we already have users details or not
  */
 if (wizardName !== null) {
-    goToQuiz()
+    goToQuiz();
 } else {
-    goToDetailsForm()
+    goToDetailsForm();
 }
