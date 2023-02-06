@@ -181,9 +181,7 @@ function detailsFormSubmit (event){
     event.preventDefault();
 
     const name = detailsForm.elements.wname.value;
-    const wizardEmail = detailsForm.elements.wemail.value;
     localStorage.setItem('name', name);
-    localStorage.setItem('email', wizardEmail);
 
     // This is to store the wizardname to show on the score page
     wizardName = name;
