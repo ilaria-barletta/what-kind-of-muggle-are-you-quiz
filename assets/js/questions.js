@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 const quizQuestions = [
     {
         title: "Where did all begin?",
