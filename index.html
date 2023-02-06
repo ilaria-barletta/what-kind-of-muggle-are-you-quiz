@@ -25,7 +25,7 @@
     </section>
 
     <!-- This section shows if we don't know the users name which we need to get before we start the quiz -->
-    <section id="wizard-details-form">
+    <div id="wizard-details-form">
         <form id="details-form">
             <label for="wname">Wizard name:</label>
             <input type="text" id="wname" name="wname" placeholder="wizard name">
@@ -33,10 +33,10 @@
             <input type="email" id="wemail" name="wemail" placeholder="wizard email">
             <button id="start-quiz-button">Go!<i class="fa-solid fa-wand-sparkles"></i></button>
         </form>
-    </section>
+    </div>
 
     <!-- This is the main quiz section where the user answers the questions -->
-    <section id="quiz-questions" class="invisible">
+    <div id="quiz-questions" class="invisible">
         <form id="quiz-questions-form">
             <label id="current-question-label">question</label>
             <div id="question-container">
@@ -65,7 +65,7 @@
                 <button id="instruction-button" type="button">?</button>
             </div>
         </form>
-    </section>
+    </div>
 
     <!-- This is the rules section -->
     <section id="rules-section">
