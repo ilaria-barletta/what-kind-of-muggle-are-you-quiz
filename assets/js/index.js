@@ -12,6 +12,7 @@ const currentQuestionLabel = document.getElementById("current-question-label");
 const instructionButton = document.getElementById("instruction-button");
 const rulesSection = document.getElementById("rules-section");
 const backToQuizButton = document.getElementById("back-to-quiz-button");
+const startQuizOverButton = document.getElementById("start-quiz-over-button");
 
 let wizardName = localStorage.getItem('name');
 
@@ -79,8 +80,13 @@ function goToQuiz() {
     makeHomepageIntroInvisible();
     makeInstructionButtonVisible();
     makeRulesSectionInvisible();
+    makeUserScoreSectionInvisible();
 
-    showQuizQuestion(0);
+    // Reset variables so we can use this to start the quiz a few times
+    currentQuizQuestion = 0;
+    userScore = 0;
+
+    showQuizQuestion(currentQuizQuestion);
 }
 
 function goToDetailsForm(){
@@ -117,21 +123,33 @@ function showUserScoreResults() {
     }
 }
 
+/**
+ * This function lets users go to the rules section
+ */
 function instructionButtonClick() {
     makeQuizInvisible();
     makeRulesSectionVisible();
     makeInstructionButtonInvisible();
 }
 
-instructionButton.addEventListener('click', instructionButtonClick)
+instructionButton.addEventListener('click', instructionButtonClick);
 
+/**
+ * This function lets users go back to the quiz from the rules 
+ */
 function backToQuizButtonClick() {
     makeQuizVisible();
     makeRulesSectionInvisible();
     makeInstructionButtonVisible();
 }
 
-backToQuizButton.addEventListener('click',backToQuizButtonClick)
+backToQuizButton.addEventListener('click',backToQuizButtonClick);
+
+function startQuizOverButtonClick() {
+    goToQuiz();
+}
+
+startQuizOverButton.addEventListener('click', startQuizOverButtonClick);
 
 /**
  * This function stores users details when they submit the wizard-details form 
@@ -166,8 +184,6 @@ function quizQuestionsFormSubmit (event){
     const optionScore = chosenOption.value;
 
     userScore = userScore + optionScore;
-    
-    console.log(' score: ', userScore);
 
     // Reset the selected option
     selectedOptionRadio.checked = false;
