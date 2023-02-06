@@ -18,6 +18,9 @@ let wizardName = localStorage.getItem('name');
 
 let currentQuizQuestion = 0;
 let userScore = 0;
+// Use these variable to pick different questions every time
+const numberOfQuestions = 10;
+let chosenQuizQuestions = [];
 
 function makeQuizVisible() {
     quizQuestionsSection.classList.remove("invisible");
@@ -64,13 +67,28 @@ function makeRulesSectionInvisible() {
 }
 
 function showQuizQuestion (questionNumber) {
-    const question = quizQuestions[questionNumber];
+    const question = chosenQuizQuestions[questionNumber];
     currentQuestionLabel.innerText = question.title;
 
     // Set the option labels for each question option
     for(let i = 0; i < question.options.length; i++) {
         const optionOneLabel = document.getElementById("option"+(i+1)+"label");
         optionOneLabel.innerText = question.options[i].title;
+    }
+}
+
+function makeChosenQuizQuestions() {
+    // Reset the list to only show 10 questions
+    chosenQuizQuestions = [];
+    /**
+     * This code was taken from here: https://stackoverflow.com/a/2380113 
+     * It gets a random question and chooses it if we didnt choose it before
+     */
+    while (chosenQuizQuestions.length < numberOfQuestions) {
+        let randomQuestion = quizQuestions[Math.floor(Math.random() * quizQuestions.length) + 1]
+        if (chosenQuizQuestions.indexOf(randomQuestion) === -1) {
+            chosenQuizQuestions.push(randomQuestion);
+        }
     }
 }
 
@@ -85,6 +103,9 @@ function goToQuiz() {
     // Reset variables so we can use this to start the quiz a few times
     currentQuizQuestion = 0;
     userScore = 0;
+
+    // Get random questions before we start the quiz 
+    makeChosenQuizQuestions();
 
     showQuizQuestion(currentQuizQuestion);
 }
@@ -177,7 +198,7 @@ function quizQuestionsFormSubmit (event){
     event.preventDefault();
 
     // Update the score
-    const question = quizQuestions[currentQuizQuestion];
+    const question = chosenQuizQuestions[currentQuizQuestion];
     const selectedOptionRadio = document.querySelector('input[name="answer"]:checked');
     const selectedValue = selectedOptionRadio.value; 
     const chosenOption = question.options[selectedValue];
@@ -190,7 +211,7 @@ function quizQuestionsFormSubmit (event){
 
 
     // If we are on the last question finish the quiz
-    if (currentQuizQuestion === quizQuestions.length - 1) {
+    if (currentQuizQuestion === chosenQuizQuestions.length - 1) {
         // Finish the quiz
         endQuiz();
     } else {
@@ -201,7 +222,6 @@ function quizQuestionsFormSubmit (event){
 }
 
 quizQuestionsForm.addEventListener('submit', quizQuestionsFormSubmit); 
-
 
 /**
  * Show quiz or form depending on if we already have users details or not
