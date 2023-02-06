@@ -39,7 +39,7 @@ header {
 
 /*Quiz style start */
 #quiz-questions {
-    background-color: rgb(237 237 237 / 70%);
+    background-color: rgb(255 248 252 / 60%);
 }
 #quiz-questions-form {
     display: flex;
@@ -71,7 +71,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(237 237 237 / 70%);
+    background-color: rgb(255 248 252 / 60%);
 }
 
 #rules-section p {
@@ -93,7 +93,7 @@ header {
 }
 
 #details-form {
-    background-color: #e9e9e9;
+    background-color:#f7eaf7;
     min-width: 400px;
     padding: 10px;
     border-radius: 4px;
@@ -116,6 +116,6 @@ header {
 
 /* this is the score section */
 #user-score-section {
-    background-color: rgb(237 237 237 / 70%);
+    background-color: rgb(255 248 252 / 60%);
     text-align: center;
 }
