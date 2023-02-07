@@ -1,108 +1,52 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# What kind of muggle are you?
+![What kind of muggle are you on multiple devices](assets/images/readme-multiple-devices.png)
 
-Welcome ilaria-barletta,
+This is a quiz game addressed to Harry Potter's fans. The main goal is to entertain users online. Questions can be tricky and multiple options can be at the same time somehow correct. Users need to provide their best answers in order to get the highest score possible. After answering 10 questions, they will be given an answer to the main question: "What kind muggles are they?". If they are unhappy with the outcome, they can try again.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The live link to the quiz can be found here: (add link)!!!!!!!!!!!!!!!!!!!!
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+----
+## Features
 
-## Gitpod Reminders
+__Homepage__: ![Welcome page and users name request](assets/images/homepage-details.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+This is a welcome to the quiz page. It presents a header and a brief message to the user. The content is centered and there is contrast with the background. A form is also present with the request to provide a name (wizard name)in order to proceed to the actual quiz. The name is mandatory as it is needed in order to be stored  along with the score and be shown at the end of the quiz. If the users does not provide a name, they won't be able to play. This page is resposive to multiple devices. The details form has been styled with the addition of a background color so that it's always perfectly visibile on the background on different screen sizes. Once the user has typed a name they can use the go button that will take them directly to the first quiz question.
 
-`python3 -m http.server`
+__Quiz__: ![Quiz questions with multiple option](assets/images/quiz.png)
 
-A blue button should appear to click: _Make Public_,
+The Quiz section will become visible only after the user has provided a name and has clicked on the go button. The questions all have 5 options and each option has been assigned a specific value. A negative value of -10 if the answer is completely wrong and a positive value if it is correct. The best option is worth 10 points. The values then get added and give the final score. For the quiz section a background color with an opacity has been added so that the text is always perfectly visible but the background does not conflict with the main background. During the quiz the user can always check the instructions. There are two buttons at the bottom of each question. One to go to the next question and one to go to the rules. 
 
-Another blue button should appear to click: _Open Browser_.
+__Instruction button__ : ![The instruction button will take the user to the rules](assets/images/instructions-button.png)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The instruction button "?" takes the user to the rules of the game. The style is consistent with the quiz and the background with the opacity is also here present. This screen along with everything else, is also responsive.  In order to return to the quiz a "back to quiz" button at the rules text can be clicked. Once clicked the user will be taken back to the same question where they were before clicking the "?" button.
 
-A blue button should appear to click: _Make Public_,
+__Score__ : ![The score page showing the name of the user along with their score and the outcome of the quiz](assets/images/score-readme.png)
 
-Another blue button should appear to click: _Open Browser_.
+The score page presents the final score to the user along with the name they provided at the beginning. Depending on the score they got, the user will get different outcomes. In particular there are 3 different score blocks. One if they got a negative number, one if they scored a number between 0 and 50 and the last one for users that scored a number from 51 to 100. A "try again" button is also present. If clicked, the user will start the quiz again. The user that wants to start the quiz over will not be asked for their name again. The quiz will start automatically as soon as they click the button. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+----
+## Testing
 
-To log into the Heroku toolbelt CLI:
+__Manual testing__: I have tested the quiz manually to ensure it works as intended on different devices. The media query are working as intended adapting all the sections to the preferred screen device. When resizing, the elements work correctly. I have checked that all the elements present on the page are visible or invisible at the right time. I have checked that the user can't proceed if they don't provide a name and that they can go back to the right question when they click on the instruction button. I have checked that they are not asked for their name again if they decide to start the quiz again after an attempt.  
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+__Validators__: ![Validators screeshot showing the outcome of html, css and js testing](assets/images/code-validators-readme.png)
+The code has been tested using respectively w3cvalidator for [html](https://validator.w3.org/#validate_by_input), jigsaw for [css](https://jigsaw.w3.org/css-validator/) and jshint for [javascript](https://jshint.com/). In javascript the validator gave me multiple warnings for the use of "const". I have then put the version specification in the file in order to get rid of them. The variable "quizQuestions" has been highlighted in both js file. The reason is that I have defined it in one file and used it in the other one. Question.js in fact only contains a list of all the quiz questions. I have 2 js files as make only one file including all the questions, options, and values would have made the file really hard to read and not organic. 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![lighthouse testing screenshot on both mobile and desktop](assets/images/lighthouse-testing-readme.png)
+Additionaly,I have also used lighthouse for testing. Both desktop and mobile testing have retured an accessibility of 100%. 
 
-------
+__Fixed Bugs__: While developing the website I have changed the structure of the quiz making it more user friendly and encountered some styling obstacles. I have also encountered some obstacles in the logical part of it as for example how to pick a random number and make sure it is not repeated in the same quiz. 
+1.  The first attempt of not showing sections on the page has been unsuccessful as I was using visibility:hidden. Visibility:hidden was hiding the section but taking the space of it. Using "display:none" instead has solved the issue so that the sections kept hidden would not occupy space on the page when not showing.
+2.  In the quiz section there are 2 buttons. Originally I didn't specify the type of the button so that the "next" button was working as intented showing the next question but the "?"instruction button was showing the instruction and taking the user back to the next question when going back to the quiz even if they had not picked their answer yet. To solve this I have added types to the buttons. The next button needed the "submit" type, the instruction button, just a "button" type.
+3. Understanding how to pick one of the questions randomly and not having it repeated in the quiz has been another challenge. To solve this I have been searching online. Eventually I have used and adapted the solution presented here https://stackoverflow.com/a/2380113  that picks a question and shows it only if not already picked before. 
 
-## Release History
+----
+## Deployment
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+----
+## Credits
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+1. The background image has been taken from google images. 
+2. The code to pick a random question and have it dispayed if not chosen before has been taken from here:  https://stackoverflow.com/a/2380113 
+3. The structure of this readme file has been taken from the CI Love running project. 
+----
