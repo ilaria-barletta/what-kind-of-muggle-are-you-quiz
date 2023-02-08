@@ -87,7 +87,7 @@ function makeChosenQuizQuestions() {
      * It gets a random question and chooses it if we didnt choose it before
      */
     while (chosenQuizQuestions.length < numberOfQuestions) {
-        let randomQuestion = quizQuestions[Math.floor(Math.random() * quizQuestions.length) + 1];
+        let randomQuestion = quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
         if (chosenQuizQuestions.indexOf(randomQuestion) === -1) {
             chosenQuizQuestions.push(randomQuestion);
         }
