@@ -11,6 +11,7 @@ const upToFiftyScoreFeedback = document.getElementById("up-to50-score");
 const fromFiftyOneScoreFeedback = document.getElementById("from51-score");
 const userScoreHeading = document.getElementById("user-score-heading");
 const currentQuestionLabel = document.getElementById("current-question-label");
+const currentUserScoreHeading = document.getElementById("current-user-score");
 const instructionButton = document.getElementById("instruction-button");
 const homepageInstructionButton = document.getElementById("homepage-instruction-button");
 const rulesSection = document.getElementById("rules-section");
@@ -70,7 +71,12 @@ function makeRulesSectionInvisible() {
     rulesSection.classList.add("invisible");
 }
 
+function updateCurrentUserScoreHeading() {
+    currentUserScoreHeading.innerText = "Score: " + userScore;
+}
+
 function showQuizQuestion (questionNumber) {
+    updateCurrentUserScoreHeading();
     const question = chosenQuizQuestions[questionNumber];
     currentQuestionLabel.innerText = question.title;
 
