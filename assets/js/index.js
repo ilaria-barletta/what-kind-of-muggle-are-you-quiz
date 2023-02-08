@@ -200,24 +200,26 @@ function quizQuestionsFormSubmit (event){
     // Update the score
     const question = chosenQuizQuestions[currentQuizQuestion];
     const selectedOptionRadio = document.querySelector('input[name="answer"]:checked');
-    const selectedValue = selectedOptionRadio.value; 
-    const chosenOption = question.options[selectedValue];
-    const optionScore = chosenOption.value;
+    if (selectedOptionRadio) {
+        const selectedValue = selectedOptionRadio.value; 
+        const chosenOption = question.options[selectedValue];
+        const optionScore = chosenOption.value;
 
-    userScore = userScore + optionScore;
+        userScore = userScore + optionScore;
 
-    // Reset the selected option
-    selectedOptionRadio.checked = false;
+        // Reset the selected option
+        selectedOptionRadio.checked = false;
 
 
-    // If we are on the last question finish the quiz
-    if (currentQuizQuestion === chosenQuizQuestions.length - 1) {
-        // Finish the quiz
-        endQuiz();
-    } else {
-        // Go to the next question
-        currentQuizQuestion++; 
-        showQuizQuestion(currentQuizQuestion);
+        // If we are on the last question finish the quiz
+        if (currentQuizQuestion === chosenQuizQuestions.length - 1) {
+            // Finish the quiz
+            endQuiz();
+        } else {
+            // Go to the next question
+            currentQuizQuestion++; 
+            showQuizQuestion(currentQuizQuestion);
+        }
     }
 }
 
