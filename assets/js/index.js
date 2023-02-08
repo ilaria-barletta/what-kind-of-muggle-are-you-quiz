@@ -52,14 +52,6 @@ function makeUserScoreSectionInvisible() {
     userScoreSection.classList.add("invisible");
 }
 
-function makeInstructionButtonVisible() {
-    instructionButton.classList.remove("invisible");
-}
-
-function makeInstructionButtonInvisible() {
-    instructionButton.classList.add("invisible");
-}
-
 function makeRulesSectionVisible() {
     rulesSection.classList.remove("invisible");
 }
@@ -98,7 +90,6 @@ function goToQuiz() {
     makeQuizVisible();
     makeDetailsFormInvisible();
     makeHomepageIntroInvisible();
-    makeInstructionButtonVisible();
     makeRulesSectionInvisible();
     makeUserScoreSectionInvisible();
 
@@ -116,14 +107,12 @@ function goToDetailsForm(){
     makeDetailsFormVisible();
     makeQuizInvisible();
     makeRulesSectionInvisible();
-    makeInstructionButtonInvisible();
 }
 
 function endQuiz() {
     makeQuizInvisible();
     makeUserScoreSectionVisible();
     showUserScoreResults();
-    makeInstructionButtonInvisible();
 }
 
 function showUserScoreResults() {
@@ -163,7 +152,6 @@ instructionButton.addEventListener('click', instructionButtonClick);
 function backToQuizButtonClick() {
     makeQuizVisible();
     makeRulesSectionInvisible();
-    makeInstructionButtonVisible();
 }
 
 backToQuizButton.addEventListener('click',backToQuizButtonClick);
