@@ -86,7 +86,7 @@ header {
     display: flex;
     justify-content: center;
 }
-#start-quiz-button { 
+#start-quiz-button, #homepage-instruction-button { 
     display: block;
     width: 100%;
     margin-top: 15px;

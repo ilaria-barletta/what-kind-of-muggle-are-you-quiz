@@ -12,6 +12,7 @@ const fromFiftyOneScoreFeedback = document.getElementById("from51-score");
 const userScoreHeading = document.getElementById("user-score-heading");
 const currentQuestionLabel = document.getElementById("current-question-label");
 const instructionButton = document.getElementById("instruction-button");
+const homepageInstructionButton = document.getElementById("homepage-instruction-button");
 const rulesSection = document.getElementById("rules-section");
 const backToQuizButton = document.getElementById("back-to-quiz-button");
 const startQuizOverButton = document.getElementById("start-quiz-over-button");
@@ -20,6 +21,11 @@ let wizardName = localStorage.getItem('name');
 
 let currentQuizQuestion = 0;
 let userScore = 0;
+
+// This variable lets the rules back button work
+// to go back to either the homepage or the quiz 
+let isInQuiz = false;
+
 // Use these variable to pick different questions every time
 const numberOfQuestions = 10;
 let chosenQuizQuestions = [];
@@ -42,6 +48,10 @@ function makeDetailsFormInvisible() {
 
 function makeHomepageIntroInvisible() {
     homepageIntroSection.classList.add("invisible");
+}
+
+function makeHomepageIntroVisible() {
+    homepageIntroSection.classList.remove("invisible");
 }
 
 function makeUserScoreSectionVisible() {
@@ -96,6 +106,7 @@ function goToQuiz() {
     // Reset variables so we can use this to start the quiz a few times
     currentQuizQuestion = 0;
     userScore = 0;
+    isInQuiz = true;
 
     // Get random questions before we start the quiz 
     makeChosenQuizQuestions();
@@ -107,6 +118,7 @@ function goToDetailsForm(){
     makeDetailsFormVisible();
     makeQuizInvisible();
     makeRulesSectionInvisible();
+    makeHomepageIntroVisible();
 }
 
 function endQuiz() {
@@ -141,17 +153,32 @@ function showUserScoreResults() {
 function instructionButtonClick() {
     makeQuizInvisible();
     makeRulesSectionVisible();
-    makeInstructionButtonInvisible();
 }
 
 instructionButton.addEventListener('click', instructionButtonClick);
+
+
+/**
+ * This function lets users go to the rules section from the homepage 
+ */
+function homepageInstructionButtonClick() {
+    makeDetailsFormInvisible();
+    makeHomepageIntroInvisible();
+    makeRulesSectionVisible();
+}
+homepageInstructionButton.addEventListener('click', homepageInstructionButtonClick);
 
 /**
  * This function lets users go back to the quiz from the rules 
  */
 function backToQuizButtonClick() {
-    makeQuizVisible();
-    makeRulesSectionInvisible();
+    if (isInQuiz) {
+        makeQuizVisible();
+        makeRulesSectionInvisible();
+    } else {
+        // Go back to the home page 
+        goToDetailsForm();
+    }
 }
 
 backToQuizButton.addEventListener('click',backToQuizButtonClick);
