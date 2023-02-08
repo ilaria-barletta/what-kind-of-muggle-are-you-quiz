@@ -20,19 +20,25 @@ __Instruction button__ : ![The instruction button will take the user to the rule
 
 The instruction button "?" takes the user to the rules of the game. The style is consistent with the quiz and the background with the opacity is also here present. This screen along with everything else, is also responsive.  In order to return to the quiz a "back to quiz" button at the rules text can be clicked. Once clicked the user will be taken back to the same question where they were before clicking the "?" button.
 
-__Score__ : ![The score page showing the name of the user along with their score and the outcome of the quiz](assets/images/score-readme.png)
+__Score__ : ![The score page showing the name of the user along with their score and the outcome of the quiz](assets/images/scores-readme.png)
 
 The score page presents the final score to the user along with the name they provided at the beginning. Depending on the score they got, the user will get different outcomes. In particular there are 3 different score blocks. One if they got a negative number, one if they scored a number between 0 and 50 and the last one for users that scored a number from 51 to 100. A "try again" button is also present. If clicked, the user will start the quiz again. The user that wants to start the quiz over will not be asked for their name again. The quiz will start automatically as soon as they click the button. 
 
 ----
 ## Testing
 
-__Manual testing__: I have tested the quiz manually to ensure it works as intended on different devices. The media query are working as intended adapting all the sections to the preferred screen device. When resizing, the elements work correctly. I have checked that all the elements present on the page are visible or invisible at the right time. I have checked that the user can't proceed if they don't provide a name and that they can go back to the right question when they click on the instruction button. I have checked that they are not asked for their name again if they decide to start the quiz again after an attempt.  
+__Manual testing__: I have tested the quiz manually to ensure it works as intended on different devices. 
+1. The media query are working as intended adapting all the sections to the preferred screen device. When resizing, the elements work correctly. 
+2. I have checked that all the elements present on the page are visible or invisible at the right time. 
+3. I have checked that the user can't proceed if they don't provide a name.
+4. I have checked that the user can go back respectively to the homeage or to the right question when they click on the instruction button. 
+5. I have checked that the user can't proceed to the next question if they do not provide an answer.
+5. I have checked that they are not asked for their name again if they decide to start the quiz again after an attempt.  
 
-__Validators__: ![Validators screeshot showing the outcome of html, css and js testing](assets/images/code-validators-readme.png)
+__Validators__: ![Validators screeshot showing the outcome of html, css and js testing](assets/images/validators-readme.png)
 The code has been tested using respectively w3cvalidator for [html](https://validator.w3.org/#validate_by_input), jigsaw for [css](https://jigsaw.w3.org/css-validator/) and jshint for [javascript](https://jshint.com/). In javascript the validator gave me multiple warnings for the use of "const". I have then put the version specification in the file in order to get rid of them. The variable "quizQuestions" has been highlighted in both js file. The reason is that I have defined it in one file and used it in the other one. Question.js in fact only contains a list of all the quiz questions. I have 2 js files as make only one file including all the questions, options, and values would have made the file really hard to read and not organic. 
 
-![lighthouse testing screenshot on both mobile and desktop](assets/images/lighthouse-testing-readme.png)
+![lighthouse testing screenshot on both mobile and desktop](assets/images/lighthouse%20readme.png)
 Additionaly,I have also used lighthouse for testing. Both desktop and mobile testing have retured an accessibility of 100%. 
 
 __Fixed Bugs__: While developing the website I have changed the structure of the quiz making it more user friendly and encountered some styling obstacles. I have also encountered some obstacles in the logical part of it as for example how to pick a random number and make sure it is not repeated in the same quiz. 
